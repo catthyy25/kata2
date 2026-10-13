@@ -12,8 +12,8 @@ public class Main {
         System.out.println(file.length());
         System.out.println(file.canRead());
 
-        try (InputStream is = new FileInputStream(file)){
-            System.out.println(new String(is.readAllBytes(), StandardCharsets.ISO_8859_1));
+        try (Reader reader = new FileReader(file, StandardCharsets.ISO_8859_1)){
+            System.out.println(reader.readAllAsString());
         }
     }
 }
